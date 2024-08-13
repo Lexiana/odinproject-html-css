@@ -1,0 +1,271 @@
+:root{
+    --main-color: #03a9f4;
+    --sec-color: #ccedfc;
+    --accent-color: #ffc107;
+    --admin-nav-width: 250px;
+    
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 5fr ;
+    grid-template-areas: 
+    "nav header"
+    "nav main";
+}
+/*--------- Navigation ---------*/
+ul{
+    list-style: none;
+}
+
+nav{
+    grid-area: nav;
+    background-color: var(--main-color);
+    color: white;
+    padding: 1em;
+}
+
+.nav-title{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.nav-title svg{
+    height: 40px;
+    width: 40px;
+}
+
+.nav-item{
+    margin-bottom: 3em;
+    font-weight: 600;
+    font-size: large;
+}
+
+.nav-item li{
+    margin-bottom: 0.8em;
+}
+svg{
+    height: 20px;
+    width: 20px;
+    margin-right: 1em;
+}
+
+nav svg{
+    fill: white;
+}
+
+/*--------- Header ---------*/
+
+header{
+    grid-area: header;
+    background-color: white;
+    padding: 1.5em;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    font-weight: bold;
+    align-items: center;
+}
+
+
+
+.search-bar{
+    align-self: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.search-bar input{
+    width: 80%;
+    background-color: var(--sec-color) ;
+    border: transparent;
+    border-radius: 15px;
+    padding: 0.5em;
+
+}
+
+.user-info{
+    align-self: center;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.user-info img{
+    height: 30px;
+    width: 30px;
+}
+
+.user-image img{
+   
+    border-radius: 50%;
+    background-color: var(--sec-color);
+    margin-right: 1em;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+}
+
+.user img {
+    height: 50px;
+    width: 50px;
+}
+.greetings{
+    display: flex;
+    flex-direction: column;
+}
+.greetings span{
+    font-size: small;
+}
+
+.header-nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-nav li{
+    display: block;
+    background-color: var(--main-color);
+    color: white;
+    padding: 0.5em;
+    width: 100px;
+    text-align: center;
+    border-radius: 15px;
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+
+/*--------- Main ---------*/
+
+main{
+    grid-area: main;
+    background-color: var(--sec-color);
+    padding: 1.5em;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "projects announcements"
+    "projects trending";
+    gap: 1.5em;
+}
+
+.section-title{
+    font-weight: bold;
+    margin-bottom: 1.5em;
+}
+
+/*--------- Projects ---------*/
+.projects{
+    grid-area: projects;
+    justify-self: stretch;
+}
+.project-container{
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: max-content;
+}
+
+.project{
+    background-color: white;
+    border-radius: 15px;
+    padding: 1em;
+    border: transparent;
+    border-left: 10px solid var(--accent-color);
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.project-text{
+    margin-bottom: 1.5em;
+}
+
+.project-title{
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.project-links ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
+
+
+
+/*--------- Announcements ---------*/
+.announcements-container{
+    grid-area: announcements;
+}
+
+.announcements, .trendings{
+    background-color: white;
+    border-radius: 15px;
+    padding: 1em;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.announcement{
+    padding:  1em 0;
+    border-bottom: solid gray 1px;
+}
+.announcement:last-child{
+    border-bottom: none;
+}
+
+.announcement-title{
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+/*--------- Trending Projects ---------*/
+.trending-container{
+    grid-area: trending;
+}
+
+.trending img{
+    height: 40px;
+    width: 40px;
+}
+.trendings{
+    padding-top: 1.5em;
+}
+.trending{
+    display: flex;
+    margin-bottom: 1.5em;
+    justify-content: flex-start;
+}
+.trending .user{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+.trending span{
+    font-weight: bold;
+    display: block;
+}
